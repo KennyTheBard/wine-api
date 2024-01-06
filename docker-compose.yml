@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: wine
+    ports:
+      - "27088:27017"
+    volumes:
+      - mongo_wine_data:/data/db
+
+volumes:
+  mongo_wine_data:
+
